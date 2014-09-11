@@ -2,12 +2,14 @@ $(document).ready(function(){
 	$('#button').on('click',function() {
 		var items= $('#item').val();
 		$('.shopping-list').append('<li>'+items+'</li>');
+		$('#item').val('');
 	});
 	$('#item').keyup(function(e) {
 		if (e.keyCode==13){
 			var items=$(this).val();
 			$('.shopping-list').append('<li>'+items+'</li>');			
-			}
+			$('#item').val('');
+		}
 	});
 	$('.shopping-list').on('click','li',function() {
 		$(this).toggleClass('strike');
